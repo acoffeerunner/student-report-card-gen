@@ -1,5 +1,14 @@
+//include header files
 #include <iostream>
 #include <conio.h>
+
+//include our files
+#include "creation.cpp"
+#include "del.cpp"
+#include "marks.cpp"
+#include "ssrc.cpp"
+#include "src.cpp"
+
 using namespace std;
 int main()
 {
@@ -13,6 +22,30 @@ int main()
     cout<<"0. Exit.";
     cin>>c;
     clrscr();
-    cout<<"You chose "<<c<<".";
+    cout<<"You chose "<<c<<".\n";
+    switch(c)
+    {
+        case 1: cout<<"============================= Creation of new student records =============================\n";
+                cr_sr();
+                break;
+        case 2: cout<<"=============================== Deletion of student records ===============================\n";
+                del_sr();
+                break;
+        case 3: cout<<"===================================== Entering of marks ===================================\n";
+                marks();
+                break;
+        case 4: cout<<"========================= Display specific student's report card ==========================\n";
+                disp_ssrc();
+                break;
+        case 5: cout<<"============================ Display all students' report cards ============================\n";
+                disp_src();
+                break;
+        case 0: cout<<"Exiting...\n";
+                getchar();
+                exit();
+                break;
+        default: cout<<"\nYou have entered an invalid option number.";
+                 break;
+    }
     return 0;
 }
