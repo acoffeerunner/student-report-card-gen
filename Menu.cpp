@@ -82,9 +82,12 @@ class marks
     }
 }
 
+//main()
 int main()
 {
     int c;
+
+    //options
     cout << "Choose an option from below:\n";
     cout << "1. Create new student records.\n";
     cout << "2. Delete student records.\n";
@@ -94,7 +97,11 @@ int main()
     cout << "0. Exit.";
     cin >> c;
     clrscr();
+
+    //after choice
     cout << "You chose " << c << ".\n";
+
+    //switch case statements
     switch (c)
     {
     case 1:
@@ -126,5 +133,6 @@ int main()
         cout << "\nYou have entered an invalid option number.";
         break;
     }
+
     return 0;
 }
