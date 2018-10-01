@@ -37,6 +37,14 @@ class person
         cout << "\nName: " << name;
         cout << "\tDate of birth: " << dob_d << "/" << dob_m << "/" << dob_y;
     }
+
+    int rollchk(int chk)
+    {
+        if(chk==roll)
+            return 1;
+        else
+            return 0;
+    }
 };
 
 class marks:public person
