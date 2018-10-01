@@ -52,10 +52,13 @@ void marks()
             }
             else
             {
-                cout << "Enter marks for roll no. " << r << ":\n" m1.getmarks();
-                cout << "\\nPlease wait..." sleep(seconds(6));
+                cout << "Enter marks for roll no. " << r << ":\n";
+                m1.getmarks();
+                cout << "\nPlease wait...";
+                sleep(seconds(6));
                 clrscr();
-                cout << "You have entered:\n\n" m1.disp_marks();
+                cout << "You have entered:\n\n";
+                m1.disp_marks();
                 char j;
 
                 j_ladder:
@@ -67,8 +70,8 @@ void marks()
                 }
                 else if (j == 'n' || j == 'N')             //no for writing
                 {
-                    cout << "Okay. Preparing file for re-entering of marks..." temp.seekp(-1 * (sizeof(m1)), ios
-                                                                                          : cur);
+                    cout << "Okay. Preparing file for re-entering of marks...";
+                    temp.seekp(-1 * (sizeof(m1)), ios : cur);
                     sleepfor((seconds(6)));
                     cout << "\n\nRe-enter marks:\n" m1.getmarks();
                     goto j_ladder;
@@ -94,7 +97,7 @@ void marks()
         char i;
         cout << "\nNo student with roll number " << r << " found!";
 
-    tb:
+        tb:
         cout << "\nWould you like to try again? (Y/N)";
         cin >> i;
 
