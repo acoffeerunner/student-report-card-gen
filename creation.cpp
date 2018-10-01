@@ -26,6 +26,11 @@ void cr_sr()
         cout<<"========|";
         sr.write((char*)&m1, sizeof(m1));
         cout<<"\nWrite operation successful!";
+        getchar();
+        cout<<"\nPlease wait while you're redirected to the main menu...";
+        sleepfor(seconds(5));
+        clrscr();
+        goto menu;
     }
     else
     {   
