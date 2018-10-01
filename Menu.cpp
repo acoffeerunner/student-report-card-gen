@@ -38,7 +38,7 @@ class person
     }
 };
 
-class marks
+class marks:public person
 {
     float e, m, s, cs, sst;
     char grade;
