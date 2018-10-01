@@ -23,7 +23,7 @@ void del_sr()
     while (!sr_i.eof())
     {
         sr_i.read((char *)m1, sizeof(m1));
-        if (m1.rollchk() == 1)
+        if (m1.rollchk(r) == 1)
         {
             chk = 1;
             break;
