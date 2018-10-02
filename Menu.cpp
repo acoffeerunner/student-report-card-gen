@@ -51,7 +51,7 @@ int main()
         break;
     case 5:
         cout << "============================ Display all students' report cards ============================\n";
-        //disp_src();
+        disp_src();
         break;
     case 0:
         cout << "Exiting...\n";
