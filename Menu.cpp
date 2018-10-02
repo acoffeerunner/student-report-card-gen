@@ -47,7 +47,7 @@ int main()
         break;
     case 4:
         cout << "========================= Display specific student's report card ==========================\n";
-        //disp_ssrc();
+        disp_ssrc();
         break;
     case 5:
         cout << "============================ Display all students' report cards ============================\n";
