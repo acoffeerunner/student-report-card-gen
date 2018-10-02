@@ -59,6 +59,7 @@ void disp_ssrc()
         else if (i == 'Y' || i == 'y') //yes for trying again
         {
             system("cls");
+            sr_i.seekg(0, ios::beg);
             goto roll_enter;
         }
         else //invalid input
