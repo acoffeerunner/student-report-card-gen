@@ -84,6 +84,7 @@ roll_enter:
         else if (k == 'Y' || k == 'y') //yes for trying again
         {
             system("cls");
+            sr_i.seekg(0, ios::beg);
             goto roll_enter;
         }
         else //invalid input
