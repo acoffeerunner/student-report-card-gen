@@ -25,14 +25,14 @@ l_ladder:
     //if else for l
     if (l == 'y' || l == 'Y') //when the user wants to re-enter
     {
-        //clrscr();
+        system("cls");
         cout << "Re-enter student details:\n";
         m1.get_info();
     }
 
     else if (l == 'n' || l == 'N') //when the user doesn't want to re-enter
     {
-        //clrscr();
+        system("cls");
 
         //ugly progress bar stuff
         cout << "Writing records to file...\n";
@@ -48,13 +48,13 @@ l_ladder:
         //redirect to menu.cpp
         cout << "\nPlease wait while you're redirected to the main menu...";
         //sleepfor(seconds(5));
-        //clrscr();
+        system("cls");
         //goto menu;
     }
 
     else //invalid case
     {
-        //clrscr();
+        system("cls");
         cout << "Invalid option selected!\n";
         goto l_ladder;
     }

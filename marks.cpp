@@ -64,7 +64,7 @@ void marks_enter()
                 m1.getmarks();
                 cout << "\nPlease wait...";
                 //sleep(seconds(6));
-                //clrscr();
+                system("cls");
                 cout << "You have entered:\n\n";
                 m1.disp_marks();
                 char j;
@@ -113,12 +113,12 @@ void marks_enter()
         if (i == 'n' || i == 'N') //no for trying again
         {
             sr_i.close();
-            //clrscr();
+            system("cls");
             //goto menu;
         }
         else if (i == 'Y' || i == 'y') //yes for trying again
         {
-            //clrscr();
+            system("cls");
             goto roll_enter;
         }
         else //invalid input

@@ -78,12 +78,12 @@ roll_enter:
         if (k == 'n' || k == 'N') //no for trying again
         {
             sr_i.close();
-            //clrscr();
+            system("cls");
             //  goto menu;
         }
         else if (k == 'Y' || k == 'y') //yes for trying again
         {
-            //clrscr();
+            system("cls");
             goto roll_enter;
         }
         else //invalid input
