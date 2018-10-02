@@ -1,7 +1,8 @@
 #ifndef includes
 #define includes
-//class person;
-//class marks;
+//class_inc header
+#include "class_inc.h"
+//menu include
 #include "menu.cpp"
 #endif
 
@@ -67,8 +68,8 @@ void marks_enter()
                 cout << "You have entered:\n\n";
                 m1.disp_marks();
                 char j;
-                temp.seekp(-1 * (sizeof(m1)), ios ::cur);
-            j_ladder:
+                //temp.seekp(-1 * (sizeof(m1)), ios ::cur);
+                j_ladder:
                 cout << "Are you sure you want to write this record to the record file? (Y/N)";
                 cin >> j;
                 if (j == 'Y' || j == 'y') //yes for writing

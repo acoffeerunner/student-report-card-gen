@@ -1,7 +1,9 @@
 #ifndef includes
 #define includes
-class person;
-class marks;
+//class_inc header
+#include "class_inc.h"
+//menu include
+#include "menu.cpp"
 #endif
 
 using namespace std;
