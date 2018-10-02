@@ -41,14 +41,6 @@ class person
     }
 };
 
-//include header files
-#include <iostream>
-//#include <conio>
-#include <fstream>
-#include <chrono>
-#include <cstdio>
-#include <cstdlib>
-
 class marks : public person
 {
     float e, m, s, cs, sst;
