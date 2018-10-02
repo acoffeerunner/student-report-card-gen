@@ -22,7 +22,7 @@ void marks_enter()
 
     roll_enter:
     //roll number entering action begins here
-    cout << "\nEnter the roll number of the student record to be deleted: ";
+    cout << "\nEnter the roll number of the student record to enter marks for: ";
     cin >> r;
     cout << "\nPlease wait while the records are analysed...";
     cout << "\n|==========================";
