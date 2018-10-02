@@ -1,5 +1,12 @@
+#ifndef includes
+#define includes
+//class person;
+//class marks;
 #include "menu.cpp"
-void marks()
+#endif
+
+using namespace std;
+void marks_enter()
 {
     //declare required int variables
     int r;
@@ -7,8 +14,8 @@ void marks()
 
     //ifstream object for record file
     ifstream sr_i;
-    sr_i.open("student_records.txt", ios : in);
-
+    sr_i.open("student_details.txt", ios :: in);
+    sr_i.seekg(0, ios :: beg);
     //marks class object
     marks m1;
 
@@ -22,7 +29,7 @@ void marks()
     //checking till eof for record with the entered roll number
     while (!sr_i.eof())
     {
-        sr_i.read((char *)m1, sizeof(m1));
+        sr_i.read((char *)&m1, sizeof(m1));
         if (m1.rollchk(r) == 1)
         {
             chk = 1;
@@ -30,7 +37,7 @@ void marks()
         }
     }
 
-    sleepfor(milliseconds(650));
+    //sleepfor(milliseconds(650));
     cout << "================================|";
 
     //if else for whether the record was found or not
@@ -38,45 +45,46 @@ void marks()
     {
         cout << "\nStudent record found!";
         ofstream temp;
-        temp.open("temp.txt", ios : out);
-        sr_i.seekg(0, ios : beg);
-        temp.seekp(0, ios : beg);
+        temp.open("temp.txt", ios ::out);
+        sr_i.seekg(0, ios ::beg);
+        temp.seekp(0, ios ::beg);
 
-        while (!sr1.eof())
+        while (!sr_i.eof())
         {
-            sr1.read((char *)m1, sizeof(m1));
-            if (m1.chkroll() == 0)
+            sr_i.read((char *)&m1, sizeof(m1));
+            if (m1.rollchk(r) == 0)
             {
                 //copying records to temp.txt
-                temp.write((char *)m1, sizeof(m1));
+                temp.write((char *)&m1, sizeof(m1));
             }
             else
             {
                 cout << "Enter marks for roll no. " << r << ":\n";
                 m1.getmarks();
                 cout << "\nPlease wait...";
-                sleep(seconds(6));
-                clrscr();
+                //sleep(seconds(6));
+                //clrscr();
                 cout << "You have entered:\n\n";
                 m1.disp_marks();
                 char j;
-
-                j_ladder:
+                temp.seekp(-1 * (sizeof(m1)), ios ::cur);
+            j_ladder:
                 cout << "Are you sure you want to write this record to the record file? (Y/N)";
                 cin >> j;
-                if (j == 'Y' || k == 'y')                   //yes for writing
+                if (j == 'Y' || j == 'y') //yes for writing
                 {
-                    temp.write((char *)m1, sizeof(m1));
+                    temp.write((char *)&m1, sizeof(m1));
+                    exit(0);
                 }
-                else if (j == 'n' || j == 'N')             //no for writing
+                else if (j == 'n' || j == 'N') //no for writing
                 {
                     cout << "Okay. Preparing file for re-entering of marks...";
-                    temp.seekp(-1 * (sizeof(m1)), ios : cur);
-                    sleepfor((seconds(6)));
-                    cout << "\n\nRe-enter marks:\n" m1.getmarks();
+                    //sleepfor((seconds(6)));
+                    cout << "\n\nRe-enter marks:\n";
+                    m1.getmarks();
                     goto j_ladder;
                 }
-                else                                       //invalid input
+                else //invalid input
                 {
                     cout << "\nInvalid input. Try again with a correct input.";
                     goto j_ladder;
@@ -97,22 +105,22 @@ void marks()
         char i;
         cout << "\nNo student with roll number " << r << " found!";
 
-        tb:
+    tb:
         cout << "\nWould you like to try again? (Y/N)";
         cin >> i;
 
-        if (i == 'n' || i == 'N')        //no for trying again
+        if (i == 'n' || i == 'N') //no for trying again
         {
             sr_i.close();
-            clrscr();
-            goto menu;
+            //clrscr();
+            //goto menu;
         }
-        else if (i == 'Y' || i == 'y')  //yes for trying again
+        else if (i == 'Y' || i == 'y') //yes for trying again
         {
-            clrscr();
+            //clrscr();
             goto roll_enter;
         }
-        else                           //invalid input
+        else //invalid input
         {
             cout << "\nInvalid input. Try again with a correct input.";
             goto tb;

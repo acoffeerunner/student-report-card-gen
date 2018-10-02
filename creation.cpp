@@ -1,38 +1,43 @@
-#include "menu.cpp"
+#ifndef  includes
+#define includes
+class person;
+class marks;
+#endif
+
+using namespace std;
 void cr_sr()
 {
     //ofstream object here
     ofstream sr;
-    sr.open("student_records.txt", ios : out);
-
+    sr.open("student_details.txt", ios :: app);
     //marks class object here
     marks m1;
     m1.get_info();
 
     //boring re-enter details part
     char l;
-    l_ladder:
+l_ladder:
     cout << "Would you like to re-enter the student record? (Y/N)   ";
     cin >> l;
 
     //if else for l
-    if (l == 'y' || l == 'Y')           //when the user wants to re-enter
+    if (l == 'y' || l == 'Y') //when the user wants to re-enter
     {
-        clrscr();
+        //clrscr();
         cout << "Re-enter student details:\n";
         m1.get_info();
     }
 
-    else if (l == 'n' || l == 'N')      //when the user doesn't want to re-enter
+    else if (l == 'n' || l == 'N') //when the user doesn't want to re-enter
     {
-        clrscr();
+        //clrscr();
 
         //ugly progress bar stuff
         cout << "Writing records to file...\n";
         cout << "|=========";
-        sleepfor(milliseconds(600));
+        //sleepfor(milliseconds(600));
         cout << "========";
-        sleepfor(milliseconds(500));
+        //sleepfor(milliseconds(500));
         cout << "========|";
         sr.write((char *)&m1, sizeof(m1));
         cout << "\nWrite operation successful!";
@@ -40,14 +45,14 @@ void cr_sr()
 
         //redirect to menu.cpp
         cout << "\nPlease wait while you're redirected to the main menu...";
-        sleepfor(seconds(5));
-        clrscr();
-        goto menu;
+        //sleepfor(seconds(5));
+        //clrscr();
+        //goto menu;
     }
-    
-    else        //invalid case
+
+    else //invalid case
     {
-        clrscr();
+        //clrscr();
         cout << "Invalid option selected!\n";
         goto l_ladder;
     }

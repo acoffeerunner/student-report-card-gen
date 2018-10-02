@@ -1,8 +1,10 @@
 //include header files
 #include <iostream>
-#include <conio.h>
-#include <fstream.h>
+//#include <conio>
+#include <fstream>
 #include <chrono>
+#include <cstdio>
+#include <cstdlib>
 
 //include our files
 #include "creation.cpp"
@@ -40,14 +42,14 @@ class person
 
     int rollchk(int chk)
     {
-        if(chk==roll)
+        if (chk == roll)
             return 1;
         else
             return 0;
     }
 };
 
-class marks:public person
+class marks : public person
 {
     float e, m, s, cs, sst;
     char grade;
@@ -56,12 +58,18 @@ class marks:public person
   public:
     marks()
     {
-        e=0; m=0; s=0; cs=0; sst=0; grade='0'; perc=0;
+        e = 0;
+        m = 0;
+        s = 0;
+        cs = 0;
+        sst = 0;
+        grade = '0';
+        perc = 0;
     }
     void getperc()
     {
         perc = e + m + s + cs + sst;
-        perc = perc / 5 * 100;
+        perc = perc / 5;
     }
     void getmarks()
     {
@@ -79,17 +87,18 @@ class marks:public person
     }
     void disp_marks()
     {
-        cout << "\nEnglish            \t" << e;
+        disp();
+        cout << "\n\nEnglish            \t" << e;
         cout << "\nMathematics        \t" << m;
         cout << "\nScience            \t" << s;
         cout << "\nComputer Science   \t" << cs;
-        cout << "\nSocial Studies     \t" << ss;
-        cout << "==============================\n\n";
+        cout << "\nSocial Studies     \t" << sst;
+        cout << "\n\n==============================\n\n";
         cout << "Percentage:          \t" << perc << "\n";
-        cout << "Grade:               \t"; << grade << "\n";
+        cout << "Grade:               \t" << grade << "\n";
         cout << "==============================\n\n";
     }
-}
+};
 
 //main()
 int main()
@@ -105,7 +114,7 @@ int main()
     cout << "5. Show all students' report cards one by one.\n";
     cout << "0. Exit.";
     cin >> c;
-    clrscr();
+    //clrscr();
 
     //after choice
     cout << "You chose " << c << ".\n";
@@ -123,20 +132,20 @@ int main()
         break;
     case 3:
         cout << "===================================== Entering of marks ===================================\n";
-        marks();
+        marks_enter();
         break;
     case 4:
         cout << "========================= Display specific student's report card ==========================\n";
-        disp_ssrc();
+        //disp_ssrc();
         break;
     case 5:
         cout << "============================ Display all students' report cards ============================\n";
-        disp_src();
+        //disp_src();
         break;
     case 0:
         cout << "Exiting...\n";
         getchar();
-        exit();
+        return 0;
         break;
     default:
         cout << "\nYou have entered an invalid option number.";
