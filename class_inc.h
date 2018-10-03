@@ -88,6 +88,6 @@ class marks : public person
         cout << "\n\n==============================\n\n";
         cout << "Percentage:          \t" << perc << "\n";
         cout << "Grade:               \t" << grade << "\n";
-        cout << "==============================\n\n";
+        cout << "\n==============================\n\n";
     }
 };
