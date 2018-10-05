@@ -49,13 +49,11 @@ void marks_enter()
         sr_i.seekg(0, ios :: beg);
         while (!sr_i.eof())
         {
-            cout<<"hi"<<m1.rollchk(r);
             sr_i.read((char *)&m1, sizeof(m1));
             if (m1.rollchk(r) == 1)
             {
                 chk = 1;
                 m1.getmarks();
-                cout<<"a";
                 sr_o.write((char *)&m1, sizeof(m1));
                 break;
             }
