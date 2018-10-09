@@ -19,11 +19,16 @@ void disp_src()
     //marks object
     marks m1;
     
-    while(!sr_i.eof())
+    while(1)
     {
         sr_i.read((char *)&m1, sizeof(m1));
-        m1.disp_marks();
-        getchar();
-        cout<<"\n\n\n\n\n\n";
+        if(!sr_i.eof())
+        {
+            m1.disp_marks();
+            getchar();
+            cout<<"\n\n\n\n\n\n";
+        }
+        else
+            break;
     }
 }
