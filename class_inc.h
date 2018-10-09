@@ -63,6 +63,25 @@ class marks : public person
         perc = e + m + s + cs + sst;
         perc = perc / 5;
     }
+    void getgrade()
+    {
+        if(perc<45)
+            	grade='F';
+        else if(perc==45)
+                grade='P';
+        else if(perc>45 && perc<=55)
+                grade='E';
+        else if(perc>55 && perc<=65)
+                grade='D';
+        else if(perc>65 && perc<=75)
+                grade='C';        
+        else if(perc>75 && perc<=85)
+                grade='B';
+        else if(perc>85 && perc<=95)
+                grade='A';           
+        else
+                grade='O';            
+    }
     void getmarks()
     {
         cout << "Enter English marks: ";
@@ -76,6 +95,7 @@ class marks : public person
         cout << "Enter Social Studies marks: ";
         cin >> sst;
         getperc();
+        getgrade();
     }
     void disp_marks()
     {
