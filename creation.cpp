@@ -28,6 +28,7 @@ l_ladder:
         system("cls");
         cout << "Re-enter student details:\n";
         m1.get_info();
+        sr.write((char *)&m1, sizeof(m1));
     }
 
     else if (l == 'n' || l == 'N') //when the user doesn't want to re-enter
@@ -40,13 +41,10 @@ l_ladder:
         cout << "========";
         cout << "========|";
         sr.write((char *)&m1, sizeof(m1));
-        cout << "\nWrite operation successful!";
+        cout << "\n\nWrite operation successful!";
+        cout << "\n\nWritten record: \n";
+        m1.disp_marks();
         getchar();
-
-        //redirect to menu.cpp
-        cout << "\nPlease wait while you're redirected to the main menu...";
-        system("cls");
-        //goto menu;
     }
 
     else //invalid case
