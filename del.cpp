@@ -38,7 +38,6 @@ roll_enter:
         }
     }
 
-    //sleepfor(milliseconds(650));
     cout << "================================|";
 
     //if else for whether the record was found or not

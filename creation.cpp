@@ -37,9 +37,7 @@ l_ladder:
         //ugly progress bar stuff
         cout << "Writing records to file...\n";
         cout << "|=========";
-        //sleepfor(milliseconds(600));
         cout << "========";
-        //sleepfor(milliseconds(500));
         cout << "========|";
         sr.write((char *)&m1, sizeof(m1));
         cout << "\nWrite operation successful!";
@@ -47,7 +45,6 @@ l_ladder:
 
         //redirect to menu.cpp
         cout << "\nPlease wait while you're redirected to the main menu...";
-        //sleepfor(seconds(5));
         system("cls");
         //goto menu;
     }

@@ -39,13 +39,12 @@ void marks_enter()
             break;
         }
     }
-    //sleepfor(milliseconds(650));
     cout << "================================|";
 
     //if else for whether the record was found or not
     if (chk == 1)
     {   
-        cout << "\nStudent record found!";
+        cout << "\nStudent record found!\n\n";
         sr_i.seekg(0, ios :: beg);
         while (!sr_i.eof())
         {

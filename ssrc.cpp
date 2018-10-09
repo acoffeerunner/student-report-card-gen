@@ -31,7 +31,6 @@ void disp_ssrc()
             break;
         }
     }
-    //sleepfor(milliseconds(650));
     cout << "================================|";
 
     if(chk==1)
