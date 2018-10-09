@@ -43,20 +43,37 @@ roll_enter:
     //if else for whether the record was found or not
     if (chk == 1)
     {
-        cout << "\nStudent record found!";
+        cout << "\n\nStudent record found!";
         ofstream temp;
         temp.open("temp.txt", ios ::out);
         sr_i.seekg(0, ios ::beg);
         temp.seekp(0, ios ::beg);
 
-        while (!sr_i.eof())
+        while (1)
         {
             sr_i.read((char *)&m1, sizeof(m1));
-            if (m1.rollchk(r) == 0)
+            if(!sr_i.eof())
             {
-                //copying records to temp.txt
-                temp.write((char *)&m1, sizeof(m1));
+                if (m1.rollchk(r) == 0)
+                {
+                    //copying records to temp.txt
+                    temp.write((char *)&m1, sizeof(m1));
+                }
+                else
+                {
+                    char i;
+                    m1.disp_marks();
+                    cout << "\n";
+                    cout << "\nAre you sure you want to delete this record? (Y/N) ";
+                    cin >> i;
+                    if(i=='N' || i=='n')
+                        temp.write((char *)&m1, sizeof(m1));
+                    else
+                        cout << "Deletion of record successfully done!";
+                }
             }
+            else
+                break;
         }
         //fstream objects closed
         temp.close();
