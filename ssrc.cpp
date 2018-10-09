@@ -35,7 +35,7 @@ void disp_ssrc()
 
     if(chk==1)
     {
-        cout<<"Student record found! Displaying from file...\n\n";
+        cout<<"\n\nStudent record found! Displaying from file...\n\n";
         m1.disp_marks();
         getchar();
     }
