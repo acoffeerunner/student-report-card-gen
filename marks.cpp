@@ -44,7 +44,7 @@ void marks_enter()
     //if else for whether the record was found or not
     if (chk == 1)
     {   
-        cout << "\nStudent record found!\n\n";
+        cout << "\n\nStudent record found!\n\n";
         sr_i.seekg(0, ios :: beg);
         while (!sr_i.eof())
         {
@@ -53,6 +53,7 @@ void marks_enter()
             {
                 chk = 1;
                 m1.getmarks();
+                cout << "\n\nWriting marks into record... Done!";
                 sr_o.write((char *)&m1, sizeof(m1));
                 break;
             }
