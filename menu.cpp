@@ -17,6 +17,7 @@ int main()
 {
     int c;
 
+    system("cls");
     //options
     cout << "Choose an option from below:\n";
     cout << "1. Create new student records.\n";
