@@ -25,6 +25,7 @@ int main()
     cout << "4. Show a specific student's report card.\n";
     cout << "5. Show all students' report cards one by one.\n";
     cout << "0. Exit.";
+    cout << "\nEnter your choice here: ";
     cin >> c;
     system("cls");
     //after choice
