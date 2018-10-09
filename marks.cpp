@@ -64,8 +64,29 @@ void marks_enter()
     }
     else
     {
-        sr_i.close();
-        sr_o.close();
-        cout<<"Student record not found";
+        cout<<"\nStudent record not found";
+    ta:
+        char k;
+        cout << "\nWould you like to try again? (Y/N)";
+        cin >> k;
+        if (k == 'n' || k == 'N')           //no for trying again
+        {
+            sr_i.close();
+            system("cls");
+            sr_i.close();
+            sr_o.close();
+        }
+        else if (k == 'Y' || k == 'y')      //yes for trying again
+        {
+            system("cls");
+            sr_i.seekg(0, ios :: beg);
+            sr_o.seekp(0, ios :: beg);
+            goto roll_enter;
+        }
+        else                                //invalid input
+        {
+            cout << "\nInvalid input. Try again with a correct input.";
+            goto ta;
+        }
     }
 }
